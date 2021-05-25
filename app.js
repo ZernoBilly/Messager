@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-require('dotenv/config');
+require('dotenv').config();
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.get('/', (req,res) => {
 
 
 //Db connection
-mongoose.connect('mongodb+srv://heikki:INIzQdvJqmCVt1T2@cluster0.x6fc9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Connected to DB!"));
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Connected to DB!"));
 
 //Server listen port
 app.listen(3000);
