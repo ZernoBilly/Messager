@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const PostSchema = mongoose.Schema({
     title: {
         type: String,
+        max: 50,
         required: true
     },
     description: {
